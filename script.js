@@ -16,13 +16,14 @@ function getComputerChoice() {
 //Human Choice
 function getHumanChoice() {
     //prompt user
-    let choice = prompt("Choose : rock, paper, scissors")
+    let choice = prompt("Choose : rock, paper, scissors").toLowerCase();
+    
     //promt again if user type invalid choice
      while (choice !== "rock" && choice !== "paper" && choice !== "scissors"){
-        choice = prompt("Invalid Choice, Please Choose : rock, paper, scissors")
+        choice = prompt("Invalid Choice, Please Choose : rock, paper, scissors").toLowerCase();
      }
    
-    return choice.toLowerCase();
+    return choice;
 }
 
 playGame();
@@ -104,6 +105,9 @@ if (humanScore > computerScore) {
     console.log("UNFORTUNATELY YOU LOSE")
     alert("UNFORTUNATELY YOU LOSE");
     return
+    } else {
+        console.log("ITS DRAW")
+    alert("ITS DRAW");
     }
     
 } 
