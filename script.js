@@ -1,10 +1,3 @@
-
-//Start Game
-function playGame(){
-    //declare score
-    let humanScore = 0;
-    let computerScore = 0;
-
 //Computer Choice
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 10);
@@ -23,6 +16,10 @@ function getComputerChoice() {
 //Human Choice
 function getHumanChoice() {
     let choice = prompt("Choose : rock, paper, scissors");
+    // while(choice !== "rock" || choice !== "paper" || choice !== "scissors") {
+    //     choice = prompt("Please type only rock, paper, scissors");
+    //     if (choice)
+    // }
     //check prompt
     // if (choice != "rock" || choice != "paper" || choice != "scissors") {
     //     console.log(choice);
@@ -34,6 +31,11 @@ function getHumanChoice() {
     return choice.toLowerCase();
 }
 
+//Start Game
+function playGame(){
+    //declare score
+    let humanScore = 0;
+    let computerScore = 0;
 
     //Play Round
     function playRound(humanChoice,computerChoice) {
@@ -67,56 +69,29 @@ function getHumanChoice() {
     let humanSelection = getHumanChoice();
     let computerSelection = getComputerChoice();
 
-    
-    // if (humanScore !== 5 || computerScore !== 5) {
-    //    playRound(humanSelection,computerSelection)
-    // } else if (humanScore === 5) {
-    // console.log("You WIn");
-    // } else if (computerScore === 5)   {
-    // console.log("You Lose")
-    // }
-   
-    // console.log("Your choice : "+ humanSelection);
-    // console.log("Computer choice : "+ computerSelection);
-    // console.log("Your Score: "+ humanScore);
-    // console.log("Computer Score : "+ computerScore);
-
-    // if (humanScore !== 5 || computerScore !== 5) {
-    //     playRound(getHumanChoice(),getComputerChoice())
-    //  } else if (humanScore === 5) {
-    //  console.log("You WIn");
-    //  } else if (computerScore === 5)   {
-    //  console.log("You Lose")
-    //  }
+    let round = 0;
 
     function result() {
         console.log("Your choice : "+ humanSelection);
         console.log("Computer choice : "+ computerSelection);
         console.log("Your Score: "+ humanScore);
         console.log("Computer Score : "+ computerScore);
+        console.log(round);
     }
 
-    playRound(humanSelection,computerSelection)
+    while(round !== 5) {
+    playRound(humanSelection = getHumanChoice(),computerSelection = getComputerChoice());
+    round++
     result();
-
-
-    while(humanScore !== 5 || computerScore !== 5) {
-    playRound(humanSelection,computerSelection);
-
-    result();
-
-    if (humanScore === 5) {
-        console.log("CONGRATULATIONS YOU WIN");
-        return
-        } else if (computerScore === 5)   {
-        console.log("UNFORTUNATELY YOU LOSE")
-        return
-        }
-        
-    } 
-
-
 }
 
-
+if (humanScore > computerScore) {
+    console.log("CONGRATULATIONS YOU WIN");
+    return
+    } else if (computerScore > humanScore)   {
+    console.log("UNFORTUNATELY YOU LOSE")
+    return
+    }
+    
+} 
     
