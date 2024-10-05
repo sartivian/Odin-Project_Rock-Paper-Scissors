@@ -16,12 +16,12 @@ function getComputerChoice() {
 //Human Choice
 function getHumanChoice() {
     //prompt user
-    let choice = prompt("Choose : rock, paper, scissor").toLowerCase();
+    do {
+        choice = prompt("Please Choose : rock, paper, scissor").toLowerCase();
+    }
     
     //promt again if user type invalid choice
-     while (choice !== "rock" && choice !== "paper" && choice !== "scissor"){
-        choice = prompt("Invalid Choice, Please Choose : rock, paper, scissor").toLowerCase();
-     }
+     while (choice !== "rock" && choice !== "paper" && choice !== "scissor");
    
     return choice;
 }
