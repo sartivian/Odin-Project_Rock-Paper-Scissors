@@ -99,7 +99,7 @@ function getComputerChoice() {
     if (round === 5) {
     if(humanScore > computerScore) {
         alert("You Win")
-            } else if (humanScore > computerScore) {
+            } else if (humanScore < computerScore) {
         alert("You Lose")
     }
  }
