@@ -16,6 +16,11 @@ function getComputerChoice() {
     let paperButton = document.getElementById("paper");
     let scissorButton = document.getElementById("scissor");
     let statusDisplay = document.getElementById("status");
+    let yourChoice = document.getElemenyById("yourChoice");
+    let yourScore = document.getElemenyById("yourScore");
+    let computerChoice = document.getElemenyById("computerChoice");
+    let computerScore = document.getElemenyById("computerScore");
+    
 
     let round = 0;
     let humanScore = 0;
@@ -49,6 +54,10 @@ function getComputerChoice() {
         console.log(`human: ${humanSelection} computer: ${computerSelection}`);
         let statusMsg = `human: ${humanSelection} computer: ${computerSelection}`;
         statusDisplay.innerText = statusMsg;
+        yourChoice.innerText = humanSelection;
+        yourScore.innerText = humanScore;
+        computerChoice.innerText = computerSelection;
+        computerScore.innerText = computerScore;
     }
         
     if (humanSelection === "rock" && computerSelection === "rock") {
@@ -56,34 +65,43 @@ function getComputerChoice() {
         print();
     } else if (humanSelection === "rock" && computerSelection === "paper") {
         console.log("You Lose!")
+        computerScore = computerScore + 1;
         print();
     } else if (humanSelection === "rock" && computerSelection === "scissor") {
         console.log("You Win!")
+        humanScore = humanScore + 1;
         print();
     } else if (humanSelection === "paper" && computerSelection === "paper") {
         console.log("Tie!")
         print();
     } else if (humanSelection === "paper" && computerSelection === "rock") {
         console.log("You Win!")
+        humanScore = humanScore + 1;
         print();
     } else if (humanSelection === "paper" && computerSelection === "scissor") {
         console.log("You Lose!")
+        computerScore = computerScore + 1;
         print();
     } else if (humanSelection === "scissor" && computerSelection === "scissor") {
         console.log("Tie!")
         print();
     } else if (humanSelection === "scissor" && computerSelection === "paper") {
         console.log("You Win!")
+        humanScore = humanScore + 1;
         print();
     } else if (humanSelection === "scissor" && computerSelection === "rock") {
         console.log("You Lose!")
+        computerScore = computerScore + 1;
         print();
     }
+     
     round = round + 1;
-    if (round === 5) [
-        
-    ]
-    
+    if (round === 5) {
+    if(humanScore > computerScore) {
+        alert("You Win")
+            } else if (humanScore > computerScore) {
+        alert("You Lose")
+    }
  }
 
 
