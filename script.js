@@ -15,11 +15,11 @@ function getComputerChoice() {
     let rockButton = document.getElementById("rock");
     let paperButton = document.getElementById("paper");
     let scissorButton = document.getElementById("scissor");
-    let statusDisplay = document.getElementById("status");
-    let yourChoice = document.getElemenyById("yourChoice");
-    let yourScore = document.getElemenyById("yourScore");
-    let computerChoice = document.getElemenyById("computerChoice");
-    let computerScore = document.getElemenyById("computerScore");
+    let statusDisplay = document.getElementById("statusMsg");
+    let humanChoiceDisplay = document.getElementById("yourChoice");
+    let humanScoreDisplay = document.getElementById("yourScore");
+    let computerChoiceDisplay = document.getElementById("computerChoice");
+    let computerScoreDisplay = document.getElementById("computerScore");
     
 
     let round = 0;
@@ -54,10 +54,10 @@ function getComputerChoice() {
         console.log(`human: ${humanSelection} computer: ${computerSelection}`);
         let statusMsg = `human: ${humanSelection} computer: ${computerSelection}`;
         statusDisplay.innerText = statusMsg;
-        yourChoice.innerText = humanSelection;
-        yourScore.innerText = humanScore;
-        computerChoice.innerText = computerSelection;
-        computerScore.innerText = computerScore;
+        humanChoiceDisplay.innerText = humanSelection;
+        humanScoreDisplay.innerText = humanScore;
+        computerChoiceDisplay.innerText = computerSelection;
+        computerScoreDisplay.innerText = computerScore;
     }
         
     if (humanSelection === "rock" && computerSelection === "rock") {
@@ -104,7 +104,7 @@ function getComputerChoice() {
     }
  }
 
-
+ }
 
 
 
